@@ -1,13 +1,80 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <title>Title</title>
-    HELLLLLLLOOOOO WOOOOOORLDDDDDD
-</head>
-<body>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
 
-</body>
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputStylesheet library="css" name="login_page.css"/>
+</h:head>
+<h:body>
+
+    <div id="menu">
+
+        <h:form>
+
+            <ul>
+
+                <li><h:commandLink action="#{registrationController.goReg()}">Registration </h:commandLink></li>
+                <li><h:commandLink action="#">kurwa</h:commandLink></li>
+
+            </ul>
+
+        </h:form>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div id="login_panel">
+        <h:form id="login_form" >
+            <table>
+                <tr>
+
+                    <td>Username:</td>
+                    <td><h:inputText id="username" value="#{loginController.userName}">
+
+
+                        <f:validator validatorId="validators.LoginReq"/>
+
+
+                    </h:inputText></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Password: </td>
+                    <td><h:inputSecret id="password" value="#{loginController.password}"
+                                       required="true" requiredMessage="Введите пароль">
+                    </h:inputSecret></td>
+
+                </tr>
+
+                <tr><td colspan="2"><h:commandButton action="#{loginController.login()}" value="Log in" onclick="checkValue(this.form,
+                                        'Введите имя пользователя');" /> <br/>
+
+                </td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+
+            <h:message id="loginerror" for="username" styleClass="message"/>
+
+
+        </h:form>
+    </div>
+
+
+
+</h:body>
 </html>
+
