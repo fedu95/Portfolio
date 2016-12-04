@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entity.Film" table="film" >
+        
+        <id name="idfilm" column="id">
+            
+            <generator class="native"/>
+        </id>
+        
+        <property name="title" column="title" type="string"/>
+        
+        <many-to-one name="genre" class="entity.Genre" lazy="false">      
+            <column name="genre_id" not-null="true"/>         
+        </many-to-one>
+        
+        <property name="year" column="year" type="integer" />
+        <property name="country" column="country" type="string" />
+        <property name="time" column="time" type="integer" />
+        <property name="poster" column="poster" type="byte" />
+        <property name="description" column="description" type="string" />
+        
+        <set name="comments" table="comments" lazy="false">         
+            <key>
+                
+                <column name="comment_id"/>
+            </key>
+                <one-to-many class="entity.CommentFilm"/>
+            
+        </set>
+        
+        
+    </class>
+  
+
+</hibernate-mapping>

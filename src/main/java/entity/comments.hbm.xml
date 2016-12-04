@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="entity.CommentFilm" table="comments">
+        
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id> 
+        
+        <property name="comment" column="comment" type="string"/>
+        
+        <many-to-one name="film" class="entity.Film" lazy="false">         
+            <column name="comment_id" not-null="true"/>    
+            
+        </many-to-one>
+        
+        <property name="date" column="date" type="date"/>
+        <property name="username" column="username" type="string"/>
+        
+        <many-to-one name="user" class="entity.User" lazy="false">
+            <column name="user_id" not-null="true"/>
+        </many-to-one>  
+        
+          <property name="mycom" column="mycom" type="boolean"/>
+              
+    </class>
+        
+        
+
+</hibernate-mapping>

@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    <application>
+
+
+        <resource-bundle>
+
+            <base-name>nls.messages</base-name>
+
+            <var>msg</var>
+
+        </resource-bundle>
+
+    </application>
+
+
+    <navigation-rule>
+
+        <from-view-id>/index.xhtml</from-view-id>
+
+
+        <navigation-case>
+
+            <from-outcome>go</from-outcome>
+
+            <to-view-id>/pages/films.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+
+        <navigation-case>
+
+            <from-outcome>reg</from-outcome>
+
+            <to-view-id>/others/registration.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+
+        <navigation-case>
+
+            <from-outcome>home</from-outcome>
+
+            <to-view-id>/index.xhtml</to-view-id>
+
+        </navigation-case>
+
+    </navigation-rule>
+
+
+    <navigation-rule>
+
+        <from-view-id>/pages/films.xhtml</from-view-id>
+
+
+        <navigation-case>
+
+            <from-outcome>home</from-outcome>
+
+            <to-view-id>/index.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+
+        <navigation-case>
+
+        <from-outcome>descript</from-outcome>
+
+        <to-view-id>/pages/descript_film.xhtml</to-view-id>
+
+        <redirect/>
+
+    </navigation-case>
+
+
+        <navigation-case>
+
+            <from-outcome>go</from-outcome>
+
+            <to-view-id>/pages/films.xhtml</to-view-id>
+
+        </navigation-case>
+
+    </navigation-rule>
+
+
+    <navigation-rule>
+
+        <from-view-id>/pages/descript_film.xhtml</from-view-id>
+
+
+        <navigation-case>
+
+            <from-outcome>go</from-outcome>
+
+            <to-view-id>/pages/films.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+
+        <navigation-case>
+
+            <from-outcome>home</from-outcome>
+
+            <to-view-id>/index.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+
+        <navigation-case>
+
+            <from-outcome>descript</from-outcome>
+
+            <to-view-id>/pages/descript_film.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+    </navigation-rule>
+
+
+    <navigation-rule>
+
+        <from-view-id>/admin/adminpage.xhtml</from-view-id>
+
+
+        <navigation-case>
+
+            <from-outcome>go</from-outcome>
+
+            <to-view-id>/admin/addfilm.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+    </navigation-rule>
+
+
+    <navigation-rule>
+
+        <from-view-id>/admin/addfilm.xhtml</from-view-id>
+
+
+        <navigation-case>
+
+            <from-outcome>exit</from-outcome>
+
+            <to-view-id>/admin/adminpage.xhtml</to-view-id>
+
+        </navigation-case>
+
+
+        <navigation-case>
+
+            <from-outcome>home</from-outcome>
+
+            <to-view-id>/pages/films.xhtml</to-view-id>
+
+            <redirect/>
+
+        </navigation-case>
+
+    </navigation-rule>
+</faces-config>

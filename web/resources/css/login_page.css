@@ -1,0 +1,40 @@
+
+
+#login_panel
+{
+    
+    width: 300px;
+    margin: 200px auto;
+}
+
+#login_panel:focus{
+    outline: none;
+}
+
+#login_panel input[type='text'],#login_panel input[type='password']
+{
+    border: 1px solid #DDD;
+    padding: 3px;
+}
+
+#login_panel input[type='submit']{
+    border: 1px solid #DDD;
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 15px;
+    
+    
+}
+
+#login_panel input[type='submit']:active{
+   
+   background-color: blue; 
+}
+
+#login_panel table {
+    
+    border: 1px solid #DDD;
+    padding: 50px;
+}
