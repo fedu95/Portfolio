@@ -1,0 +1,200 @@
+body {
+
+    background-color: #edeef0; /* Цвет фона */
+
+}
+
+.selectedPage {
+    color: red;
+
+}
+
+#film_description {
+
+    padding-bottom: 30px;
+
+}
+
+#film_description table {
+
+}
+
+.textArea_comment {
+    width: 715px;
+    height: 75px;
+
+}
+
+#add_comment {
+
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    margin-bottom: 40px;
+}
+
+#add_comment table {
+
+    padding: 40px;
+
+}
+
+.Username {
+    text-align: right;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: "Arial";
+
+}
+
+.selectedLetter {
+
+    color: red;
+}
+
+.selectedGenre {
+    border-bottom: red;
+
+}
+
+#letters {
+
+    border-top-style: double;
+    border-left-style: double;
+    border-right-style: double;
+    background-color: #C0C0C0;
+    width: 900px;
+    height: 30px;
+    margin-left: 20%;
+
+}
+
+#letters a {
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Arial";
+
+    margin-left: 16.5px;
+
+}
+
+#letters count {
+
+    text-decoration: none;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Arial";
+
+    margin-left: 35%;
+
+}
+
+#head {
+    opacity: 0;
+    border-left-style: double;
+    border-right-style: double;
+
+    width: 900px;
+    height: 80px;
+    background-color: #C0C0C0;
+    margin-left: 20%;
+
+}
+
+#content {
+
+    margin-top: 80px;
+    padding: 30px;
+    border: 1px solid #607B8B;
+    width: 60%;
+    height: 100%;
+    margin-left: 15%;
+    background-color: white;
+}
+
+#menu {
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 120;
+    background-color: #4682B4;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 20%;
+
+}
+
+#menu ul li {
+
+    float: left;
+    list-style-type: none;
+}
+
+#menu ul li a {
+
+    color: white;
+    padding: 0 20px;
+    font-family: "Impact";
+    font-size: 18px;
+    text-decoration: none;
+
+}
+
+#menu ul li a:hover {
+
+    padding: 0 20px;
+    border-bottom-style: outset;
+    border-bottom-color: whitesmoke;
+    border-width: 7px;
+}
+
+.message {
+    font-size: 20px;
+    font-family: "Arial";
+}
+
+.login_form {
+
+    margin-left: 150px;
+}
+
+.pageNumbers {
+    line-height: 150px;
+
+}
+
+#footer {
+
+    border-left-style: double;
+    border-right-style: double;
+    border-bottom-style: double;
+    width: 900px;
+
+    background-color: #C0C0C0;
+    margin-left: 20%;
+
+}
+
+#numberPages_div {
+
+    margin-left: 50%;
+
+}
+
+#numberPages_div a {
+    color: blue;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+#numberPages_div a:hover {
+    color: red;
+
+    font-size: 25px;
+}
+
+
+

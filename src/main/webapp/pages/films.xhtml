@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+        >
+
+<h:head>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputStylesheet library="css" name="style_films.css"/>
+
+    <title>#{msg.welcome_title}</title>
+</h:head>
+<h:body>
+
+    <ui:composition template="/templates/films_template.xhtml">
+
+        <ui:define name="content">
+
+
+            <h:panelGroup id="film_form">
+
+                <ui:repeat value="#{genreController.listFilms}" var="f">
+
+                    <div id="film_style">
+
+                        <h:form>
+
+                            <table>
+
+                                <tr>
+                                    <td rowspan="4"><h:graphicImage value="/ShowImage?idfilm=#{f.getIdfilm()}"
+                                                                    width="120" height="160"/></td>
+                                    <td> Название - <h:commandLink value="#{f.getTitle()}"
+                                                                   action="#{filmListController.fillFilmById()}">
+                                        <f:param name="idfilm" value="#{f.getIdfilm()}"/>
+                                        <f:param name="username" value="#{loginController.userName}"/>
+
+                                    </h:commandLink></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Длительность - #{f.getTime()}</td>
+                                </tr>
+                                <tr>
+                                    <td>Год - #{f.getYear()}</td>
+                                </tr>
+                                <tr>
+                                    <td> Страна - #{f.getCountry()}</td>
+                                </tr>
+                                <tr>
+                                    <td><h:commandLink rendered="#{genreController.adminActive}" value="Удалить фильм"
+                                                       action="#{adminController.deleteFilm()}">
+                                        <f:param name="id_film" value="#{f.getIdfilm()}"/>
+
+                                    </h:commandLink></td>
+                                </tr>
+
+
+                            </table>
+
+                        </h:form>
+                    </div>
+
+
+                </ui:repeat>
+
+
+            </h:panelGroup>
+
+        </ui:define>
+    </ui:composition>
+
+
+</h:body>
+</html>
+

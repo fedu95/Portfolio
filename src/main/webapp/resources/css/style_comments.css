@@ -1,31 +1,26 @@
 
-#comment{
+#comment {
     border-top: 2px solid #DDD;
     margin-bottom: 50px;
-    
-    
+
 }
 
-#comment table{
-    
-    
-    
-    
+#comment table {
+
 }
 
-#tr_border{
-    
+#tr_border {
+
     border-bottom: 2px solid #DDD;
 }
 
-#td_border
-{
+#td_border {
     border-bottom: 2px solid #DDD;
-    
+
 }
 
-#comment_count{
-   
+#comment_count {
+
     font-size: 18px;
     text-align: right;
     margin-bottom: 30px;

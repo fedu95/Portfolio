@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+        >
+<h:head>
+    <title>Facelet Title</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <h:outputStylesheet library="css" name="style_comments.css"/>
+</h:head>
+<h:body>
+
+    <div id="menu">
+
+        <ui:repeat value="#{genreController.genreList}" var="list">
+
+            <h:form>
+                <ul>
+                    <li>
+
+                        <h:commandLink id="ItemMenu" value="#{list.getTitle()}"
+                                       action="#{genreController.fillFilmsByGenre()}">
+
+                            <f:param name="genre_id" value="#{list.getId()}"/>
+
+
+                        </h:commandLink>
+                    </li>
+                </ul>
+            </h:form>
+
+        </ui:repeat>
+
+        <div>
+            <h:form styleClass="Username">
+                Привет #{loginController.userName}
+                <h:commandLink action="#{loginController.logout()}" styleClass="Username" value="Exit"/>
+            </h:form>
+        </div>
+
+    </div>
+
+    <div id="content">
+
+
+        <div id="film_description">
+
+
+            <ui:repeat value="#{filmListController.listFilms}" var="film">
+
+                <h:form>
+
+                    <table>
+
+                        <tr>
+                            <td rowspan="4"><h:graphicImage value="/ShowImage?idfilm=#{film.getIdfilm()}" width="120"
+                                                            height="160"/></td>
+                            <td>Название: #{film.getTitle()}</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Cтрана: #{film.country}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">#{film.getDescription()}</td>
+                        </tr>
+
+
+                    </table>
+
+                </h:form>
+
+
+            </ui:repeat>
+
+        </div>
+
+
+        <div id="add_comment">
+
+            <h:form>
+
+                <table>
+
+                    <tr>
+                        <td><h:inputTextarea styleClass="textArea_comment" value="#{filmListController.text}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><h:commandButton value="Добавить комментарий" action="#{filmListController.addComment()}">
+
+                            <f:param name="username" value="#{loginController.userName}"/>
+                            <f:param name="idfilm" value="#{film.getIdfilm()}"/>
+
+                        </h:commandButton>
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </h:form>
+
+        </div>
+
+
+        <h id="comment_count">Всего коментариев: #{filmListController.comments.size()}<br/></h>
+        <h:panelGroup id="comments">
+            <ui:repeat value="#{filmListController.comments}" var="c">
+
+
+                <div id="comment">
+                    <h:form>
+
+
+                        <table>
+
+                            <tr>
+                                <td>Оставил пользователь #{c.getUsername()} </td>
+                                <td id="data_comment"> в #{c.getDate()} </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#{c.getComment()}</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td><h:commandLink rendered="#{c.isMycom()}" value="Delete comment"
+                                                   action="#{filmListController.deleteComment()}">
+                                    <f:param name="id_comm" value="#{c.getId()}"/>
+                                </h:commandLink></td>
+
+                            </tr>
+
+                        </table>
+                    </h:form>
+
+                </div>
+
+            </ui:repeat>
+        </h:panelGroup>
+
+
+    </div>
+
+
+</h:body>
+</html>
+
